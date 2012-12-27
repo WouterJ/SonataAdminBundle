@@ -4,7 +4,9 @@ Form Help Messages
 Help Messages
 -------------
 
-Help messages are short notes that are rendered together with form fields. They are generally used to show additional information so the user can complete the form element faster and more accurately.
+Help messages are short notes that are rendered together with form fields.
+They are generally used to show additional information so the user can
+complete the form element faster and more accurately.
 
 Example
 -------

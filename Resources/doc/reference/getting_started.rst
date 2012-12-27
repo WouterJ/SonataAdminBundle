@@ -39,7 +39,6 @@ code to your application's routing file:
 At this point you can already access the admin dashboard by visiting the url:
 ``http://yoursite.local/admin/dashboard``.
 
-
 Step 2: Setup the persistence service (ORM, ODM, ...)
 -----------------------------------------------------
 
@@ -142,15 +141,17 @@ admin service and link it into the framework by setting the sonata.admin tag.
       </services>
    </container>
 
+.. note::
 
-Note: If you don't already have a configuration file for the purpose, you can register this service in a ``services.xml`` file, save the file in ``app/config``, and then import it from ``config.yml``: 
+    If you don't already have a configuration file for the purpose, you can
+    register this service in a ``services.xml`` file, save the file in
+    ``app/config``, and then import it from ``config.yml``: 
 
-.. code-block:: yaml
+    .. code-block:: yaml
 
-    # app/config/config.yml
-    imports:
-        - { resource: services.xml }
-
+        # app/config/config.yml
+        imports:
+            - { resource: services.xml }
 
 Step 5: Configuration
 ---------------------
@@ -186,6 +187,8 @@ and change them according to your requirements:
 Linking the admin class to the dashboard is done automatically because of the
 default option you defined above:
 
+.. code-block:: yaml
+
     dashboard
         blocks:
             # display a dashboard block
@@ -195,6 +198,8 @@ default option you defined above:
             default: ~
 
 However you can define only admin groups you want to show in the dashboard by:
+
+.. code-block:: yaml
 
     dashboard
         blocks:
@@ -207,7 +212,6 @@ However you can define only admin groups you want to show in the dashboard by:
                 items: ~
 
 More information can be found in the configuration chapter of this documentation.
-
 
 Step 6: Security
 ----------------

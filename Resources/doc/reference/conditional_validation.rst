@@ -8,7 +8,7 @@ can take a while to code for complex rules. Rules must be a set of a ``Constrain
 and ``Validator`` instances.
 
 The inline validation tries to provide a nice solution by introducting an ``ErrorElement``
-object. The object can be used to check assertion against the model :
+object. The object can be used to check assertion against the model:
 
 .. code-block:: php
 
@@ -59,13 +59,13 @@ Just add the ``InlineConstraint`` class constraint, like this:
 
 There are two important options:
 
-  - ``service``: the service where the validation method is defined
-  - ``method``: the service's method to call
+* ``service``: the service where the validation method is defined
+* ``method``: the service's method to call
 
 The method must accept two arguments:
 
- - ``ErrorElement``: the instance where assertion can be checked
- - ``value``: the object instance
+* ``ErrorElement``: the instance where assertion can be checked
+* ``value``: the object instance
 
 
 Example from the ``SonataPageBundle``

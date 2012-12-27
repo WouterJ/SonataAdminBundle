@@ -1,9 +1,11 @@
 Installation
 ============
+
 Prerequisites
 -------------
-PHP 5.3 and Symfony 2 are needed to make this bundle work ; there are also some
-Sonata dependencies that need to be installed and configured beforehand :
+
+PHP 5.3 and Symfony 2 are needed to make this bundle work; there are also some
+Sonata dependencies that need to be installed and configured beforehand:
 
     - `SonataCacheBundle <http://sonata-project.org/bundles/cache>`_
     - `SonataBlockBundle <http://sonata-project.org/bundles/block>`_
@@ -12,15 +14,17 @@ Sonata dependencies that need to be installed and configured beforehand :
     - `Exporter <https://github.com/sonata-project/exporter>`_
 
 You will need to install those in their 2.0 branches (or master if they don't
-have a similar branch). Follow also their configuration step ; you will find
+have a similar branch). Follow also their configuration step; you will find
 everything you need in their installation chapter.
 
 .. note::
+
     If a dependency is already installed somewhere in your project or in
     another dependency, you won't need to install it again.
 
 Translations
 ~~~~~~~~~~~~
+
 If you wish to use default translation texts provided in this bundle, you have
 to make sure you have translator enabled in your config.
 
@@ -33,7 +37,8 @@ to make sure you have translator enabled in your config.
 
 Installation
 ------------
-Alter your deps file, and add these lines :
+
+Alter your deps file, and add these lines:
 
 .. code-block:: ini
 
@@ -42,7 +47,7 @@ Alter your deps file, and add these lines :
         target=/bundles/Sonata/AdminBundle
         version=origin/2.0
 
-You will also need to alter your ``app/config/config.yml`` file :
+You will also need to alter your ``app/config/config.yml`` file:
 
 .. code-block:: yaml
 
@@ -57,12 +62,14 @@ You will also need to alter your ``app/config/config.yml`` file :
             sonata.block.service.action:
             sonata.block.service.rss:
 
-and finally run the vendors script to download bundles::
+and finally run the vendors script to download bundles:
 
-  php bin/vendors install
+.. code-block:: bash
 
-Next, be sure to enable this bundle in your autoload.php (if it is not already
-in there) and AppKernel.php files:
+    php bin/vendors install
+
+Next, be sure to enable this bundle in your ``autoload.php`` (if it is not already
+in there) and ``AppKernel.php`` files:
 
 .. code-block:: php
 
@@ -84,14 +91,18 @@ in there) and AppKernel.php files:
         );
     }
 
-Now, install the assets from the bundles::
+Now, install the assets from the bundles:
+
+.. code-block:: bash
 
     php app/console assets:install web
 
-Usually when installing new bundles a good practice is to also delete your cache::
+Usually when installing new bundles a good practice is to also delete your cache:
+
+.. code-block:: bash
 
     php app/console cache:clear
 
 After you have successfully installed above bundles you need to configure
 SonataAdminBundle for administering your models. All that is needed to quickly
-set up SonataAdminBundle is described in the next chapter : :doc:`getting_started`.
+set up SonataAdminBundle is described in the next chapter: :doc:`getting_started`.

@@ -13,7 +13,7 @@ It provides a flexible framework for user management that aims to handle common
 tasks such as user login, registration and password retrieval.
 
 The ``SonataUserBundle`` is just a thin wrapper to include the ``FOSUserBundle``
-into the ``AdminBundle``. The ``SonataUserBundle`` includes :
+into the ``AdminBundle``. The ``SonataUserBundle`` includes:
 
 * A default login area
 * A default ``user_block`` template which is used to display the current user 
@@ -36,10 +36,10 @@ Security handlers
 The security part is managed by a ``SecurityHandler``, the bundle comes with 3 
 handlers
 
-  - ``sonata.admin.security.handler.role`` : ROLES to handle permissions
-  - ``sonata.admin.security.handler.acl`` : ACL and ROLES to handle permissions
-  - ``sonata.admin.security.handler.noop`` : always returns true, can be used 
-    with the Symfony2 firewall
+* ``sonata.admin.security.handler.role``: ROLES to handle permissions
+* ``sonata.admin.security.handler.acl``: ACL and ROLES to handle permissions
+* ``sonata.admin.security.handler.noop``: always returns true, can be used 
+  with the Symfony2 firewall
 
 The default value is ``sonata.admin.security.handler.noop``, if you want to 
 change the default value you can set the ``security_handler`` to 
@@ -131,14 +131,14 @@ User class (in a custom UserBundle). Do it as follows:
     /**
      * @ORM\Entity
      * @ORM\Table(name="fos_user")
-    \*/
+     */
     class User extends BaseUser
     {
         /**
          * @ORM\Id
          * @ORM\Column(type="integer")
          * @ORM\GeneratedValue(strategy="AUTO")
-         \*/
+         */
         protected $id;
 
         public function __construct()

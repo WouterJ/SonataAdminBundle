@@ -4,7 +4,8 @@ Advance
 Service Configuration
 ---------------------
 
-When you create a new Admin service you can configure its dependencies, the services which are injected by default are:
+When you create a new Admin service you can configure its dependencies, the
+services which are injected by default are:
 
 =========================     =============================================
 Dependencies                  Service Id
@@ -24,51 +25,53 @@ router_builder                sonata.admin.route.path_info
 label_translator_strategy     sonata.admin.label.strategy.form_component
 =========================     =============================================
 
-Note: %manager-type% is to be replaced by the manager type (orm, odm...)
+.. note::
 
-You have 2 ways of defining the dependencies inside a ``services.xml``.
+    ``%manager-type%`` is to be replaced by the manager type (orm, odm...)
 
-* With a tag attribute, less verbose :
+You have 2 ways of defining the dependencies inside a ``services.xml``:
 
-.. code-block:: xml
+* With a tag attribute, less verbose:
 
-        <service id="acme.project.admin.security_feed" class="AcmeBundle\ProjectBundle\Admin\ProjectAdmin">
-            <tag
-                name="sonata.admin"
-                manager_type="orm"
-                group="Project"
-                label="Project"
-                label_translator_strategy="sonata.admin.label.strategy.native"
-                router_builder="sonata.admin.route.path_info"
-                />
-            <argument />
-            <argument>AcmeBundle\ProjectBundle\Entity\Project</argument>
-            <argument />
-        </service>
+  .. code-block:: xml
 
-* With a method call, more verbose
+      <service id="acme.project.admin.security_feed" class="AcmeBundle\ProjectBundle\Admin\ProjectAdmin">
+          <tag
+              name="sonata.admin"
+              manager_type="orm"
+              group="Project"
+              label="Project"
+              label_translator_strategy="sonata.admin.label.strategy.native"
+              router_builder="sonata.admin.route.path_info"
+              />
+          <argument />
+          <argument>AcmeBundle\ProjectBundle\Entity\Project</argument>
+          <argument />
+      </service>
 
-.. code-block:: xml
+* With a method call, more verbose:
 
-        <service id="acme.project.admin.project" class="AcmeBundle\ProjectBundle\Admin\ProjectAdmin">
-            <tag
-                name="sonata.admin"
-                manager_type="orm"
-                group="Project"
-                label="Project"
-                />
-            <argument />
-            <argument>AcmeBundle\ProjectBundle\Entity\Project</argument>
-            <argument />
+  .. code-block:: xml
 
-            <call method="setLabelTranslatorStrategy">
-                <argument type="service" id="sonata.admin.label.strategy.native" />
-            </call>
-
-            <call method="setRouterBuilder">
-                <argument type="service" id="sonata.admin.route.path_info" />
-            </call>
-        </service>
+      <service id="acme.project.admin.project" class="AcmeBundle\ProjectBundle\Admin\ProjectAdmin">
+          <tag
+              name="sonata.admin"
+              manager_type="orm"
+              group="Project"
+              label="Project"
+              />
+          <argument />
+          <argument>AcmeBundle\ProjectBundle\Entity\Project</argument>
+          <argument />
+      
+          <call method="setLabelTranslatorStrategy">
+              <argument type="service" id="sonata.admin.label.strategy.native" />
+          </call>
+      
+          <call method="setRouterBuilder">
+              <argument type="service" id="sonata.admin.route.path_info" />
+          </call>
+      </service>
 
 
 If you want to modify the service that is going to be injected, add the following code to your

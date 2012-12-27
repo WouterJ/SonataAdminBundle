@@ -1,7 +1,8 @@
 Templates
 =========
 
-By default, an Admin class uses a set of templates, it is possible to tweak the default values by editing the configuration
+By default, an Admin class uses a set of templates, it is possible to tweak
+the default values by editing the configuration
 
 .. code-block:: yaml
 
@@ -23,23 +24,25 @@ By default, an Admin class uses a set of templates, it is possible to tweak the 
             short_object_description: SonataAdminBundle:Helper:short-object-description.html.twig
 
 
-Usage of each template :
+Usage of each template:
 
-* layout : base layout used by the dashboard and an admin class
-* ajax : default layout used when an ajax request is performed
+* layout: base layout used by the dashboard and an admin class
+* ajax: default layout used when an ajax request is performed
 * dashboard: default layout used at the dashboard
-* list : the template to use for the list action
-* show : the template to use for the show action
-* edit : the template to use for the edit and create action
-* history : the template to use for the history / audit action
-* preview : the template to use for previewing an edit / create action
+* list: the template to use for the list action
+* show: the template to use for the show action
+* edit: the template to use for the edit and create action
+* history: the template to use for the history / audit action
+* preview: the template to use for previewing an edit / create action
 * short_object_description: used to represent the entity in one-to-one/many-to-one relations
 
-The default values will be set only if the ``Admin::setTemplates`` is not called by the Container.
+The default values will be set only if the ``Admin::setTemplates`` is not
+called by the Container.
 
-You can easily extend the provided templates in your own and customize only the blocks you need to change:
+You can easily extend the provided templates in your own and customize only
+the blocks you need to change:
 
-.. code-block:: jinja
+.. code-block:: html+jinja
 
     {% extends 'SonataAdminBundle:CRUD:edit.html.twig' %}
     {# Acme/MyBundle/Ressources/view/my-custom-edit.html.twig #}

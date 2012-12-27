@@ -4,10 +4,9 @@ Saving hooks
 When the model is persited upon on the stated object two Admin methods are 
 always called. You can extend this method to add custom business logic.
 
-    - new object : ``prePersist($object)`` / ``postPersist($object)``
-    - edited object : ``preUpdate($object)`` / ``postUpdate($object)``
-    - deleted object : ``preRemove($object)`` / ``postRemove($object)``
-
+* new object: ``prePersist($object)``/``postPersist($object)``
+* edited object: ``preUpdate($object)``/``postUpdate($object)``
+* deleted object: ``preRemove($object)``/``postRemove($object)``
 
 Example used with the FOS/UserBundle
 ------------------------------------

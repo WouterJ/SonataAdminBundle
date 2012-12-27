@@ -4,11 +4,11 @@ Configuration
 Configuration options
 
 * ``security_handler``
-    * ``sonata.admin.security.handler.noop`` : The default value
-    * ``sonata.admin.security.handler.acl`` : Use this service if you want ACL
+    * ``sonata.admin.security.handler.noop``: The default value
+    * ``sonata.admin.security.handler.acl``: Use this service if you want ACL
 
-* ``title`` : The admin's title, can be the client name for instance (default: Sonata Admin)
-* ``title_logo`` : logo to use, must be an image with a height of 28px (default : /bundles/sonataadmin/logo_title.png)
+* ``title``: The admin's title, can be the client name for instance (default: Sonata Admin)
+* ``title_logo``: logo to use, must be an image with a height of 28px (default : /bundles/sonataadmin/logo_title.png)
 
 Please see :doc:`templates` for more information on how to configure default templates.
 

@@ -6,8 +6,8 @@ The default routes used in the CRUD controller are accessible through the
 
 The ``Admin`` class contains two routing methods:
 
-* ``getRoutes()``: Returns the available routes;
-* ``generateUrl($name, $options)``: Generates the related routes.
+* ``getRoutes()``: Returns the available routes
+* ``generateUrl($name, $options)``: Generates the related routes
 
 Routing Definition
 ------------------
