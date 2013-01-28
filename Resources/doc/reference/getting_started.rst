@@ -33,8 +33,8 @@ code to your application's routing file:
 .. note::
 
     If you're using XML or PHP to specify your application's configuration,
-    the above routing configuration must be placed in routing.xml or
-    routing.php according to your format (i.e. XML or PHP).
+    the above routing configuration must be placed in ``routing.xml`` or
+    ``routing.php`` according to your format (i.e. XML or PHP).
 
 At this point you can already access the admin dashboard by visiting the url:
 ``http://yoursite.local/admin/dashboard``.
@@ -63,7 +63,7 @@ Step 3: Create Admin class
 
 Admin class represents mapping of your model and administration sections (forms,
 list, show). The easiest way to create an admin class for your model is to extend
-the Sonata\AdminBundle\Admin\Admin class. For filter, list and show views, you can
+the ``Sonata\AdminBundle\Admin\Admin`` class. For filter, list and show views, you can
 target a sub model property thanks to the dot-separated notation
 (eg: ``mySubModel.mySubSubModel.myProperty``).
 

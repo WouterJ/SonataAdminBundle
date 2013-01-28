@@ -75,7 +75,7 @@ value has a different type : integer, url, or string for instance.
     {
         protected $options = array(
             'ttl'       => 1,
-            'redirect'  => ''
+            'redirect'  => '',
         );
 
         public function setOptions(array $options)
@@ -93,13 +93,13 @@ Now, the property can be edited by setting a type for each type
 
 .. code-block:: php
 
-        <?php
-        $form->add('options', 'sonata_type_immutable_array', array(
-            'keys' => array(
-                array('ttl',        'text', array('required' => false)),
-                array('redirect',   'url',  array('required' => true)),
-            )
-        ));
+    <?php
+    $form->add('options', 'sonata_type_immutable_array', array(
+        'keys' => array(
+            array('ttl',      'text', array('required' => false)),
+            array('redirect', 'url',  array('required' => true)),
+        )
+    ));
 
 
 sonata_type_boolean
@@ -115,9 +115,9 @@ sonata_type_translatable_choice
 The translatable type is a specialized ``ChoiceType`` where the choices values 
 are translated with the Symfony Translator component.
 
-The type has one extra parameter :
+The type has one extra parameter:
 
- * ``catalogue`` : the catalogue name to translate the value
+ * ``catalogue``: the catalogue name to translate the value
 
 
 .. code-block:: php
@@ -143,5 +143,5 @@ The type has one extra parameter :
     // form usage
     $form->add('deliveryStatus', 'sonata_type_translatable_choice', array(
         'choices' => Delivery::getStatusList(),
-        'catalogue' => 'SonataOrderBundle'
-    ))
+        'catalogue' => 'SonataOrderBundle',
+    ));

@@ -25,11 +25,11 @@ batch actions. For example, we define here a new ``merge`` action.
         $actions = parent::getBatchActions();
 
         // check user permissions
-        if($this->hasRoute('edit') && $this->isGranted('EDIT') && $this->hasRoute('delete') && $this->isGranted('DELETE')){
-            $actions['merge']=[
+        if ($this->hasRoute('edit') && $this->isGranted('EDIT') && $this->hasRoute('delete') && $this->isGranted('DELETE')) {
+            $actions['merge'] = array(
                 'label'            => $this->trans('action_merge', array(), 'SonataAdminBundle'),
-                'ask_confirmation' => true // If true, a confirmation will be asked before performing the action
-            ];
+                'ask_confirmation' => true, // If true, a confirmation will be asked before performing the action
+            );
 
         }
 
@@ -50,7 +50,6 @@ See Symfony bundle overriding mechanism for further explanation.
 .. code-block:: html+jinja
 
     {# in Acme/ProjectBundle/Resources/views/CRUD/list__batch.html.twig #}
-
 
     {# See SonataAdminBundle:CRUD:list__batch.html.twig for the current default template #}
     <td class="sonata-ba-list-field sonata-ba-list-field-batch">
@@ -148,8 +147,7 @@ query is ``null``.
 
     public function batchActionMerge(ProxyQueryInterface $selectedModelQuery)
     {
-        if ($this->admin->isGranted('EDIT') === false || $this->admin->isGranted('DELETE') === false)
-        {
+        if (false === $this->admin->isGranted('EDIT') || false === $this->admin->isGranted('DELETE')) {
             throw new AccessDeniedException();
         }
 
@@ -158,7 +156,7 @@ query is ``null``.
 
         $target = $modelManager->find($this->admin->getClass(), $request->get('targetId'));
 
-        if( $target === null){
+        if (null === $target) {
             $this->get('session')->setFlash('sonata_flash_info', 'flash_batch_merge_no_target');
 
             return new RedirectResponse($this->admin->generateUrl('list',$this->admin->getFilterParameters()));
@@ -166,7 +164,7 @@ query is ``null``.
 
         $selectedModels = $selectedModelQuery->execute();
 
-        // do the merge work here
+        // ... do the merge work here
 
         try {
             foreach ($selectedModels as $selectedModel) {

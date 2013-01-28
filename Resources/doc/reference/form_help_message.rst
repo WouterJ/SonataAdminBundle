@@ -22,7 +22,8 @@ Example
                 ->with('General')
                     ->add('title', null, array('help'=>'Set the title of a web page'))
                     ->add('keywords', null, array('help'=>'Set the keywords of a web page'))
-                ->end();
+                ->end()
+            ;
         }
     }
 
@@ -44,7 +45,8 @@ Alternative Way To Define Help Messages
                         'title' => 'Set the title of a web page',
                         'keywords' => 'Set the keywords of a web page',
                     ))
-                ->end();
+                ->end()
+            ;
         }
     }
 

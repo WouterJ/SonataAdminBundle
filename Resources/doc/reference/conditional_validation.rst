@@ -23,7 +23,8 @@ object. The object can be used to check assertion against the model:
             ->assertNotBlank()
             ->assertMinLength(array('limit' => 50))
             ->addViolation('ho yeah!')
-        ->end();
+        ->end()
+    ;
 
     if (/* complex rules */) {
         $errorElement->with('value')->addViolation('Fail to check the complex rules')->end()
@@ -95,6 +96,7 @@ Example from the ``SonataPageBundle``
                     ->assertNotBlank()
                     ->assertMinLength(array('limit' => 50))
                     ->addViolation('ho yeah!')
-                ->end();
+                ->end()
+            ;
         }
     }

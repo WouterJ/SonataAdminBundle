@@ -30,6 +30,7 @@ matches 'preview'.
             case 'preview':
                 return 'AcmeDemoBundle:CRUD:preview.html.twig';
                 break;
+
             default:
                 return parent::getTemplate($name);
                 break;
